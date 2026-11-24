@@ -1,0 +1,40 @@
+{
+  "name": "devguide",
+  "displayName": "DevGuide Socratic Tutor",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "devguide-sidebar-view",
+          "title": "DevGuide",
+          "icon": "$(book)"
+        }
+      ]
+    },
+    "views": {
+      "devguide-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "devguide.chatView",
+          "name": "DevGuide Tutor"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "openai": "^6.25.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.109.0"
+  }
+}
